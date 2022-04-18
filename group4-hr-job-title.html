@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+		<!--Name:
+				filename: group4-hr-job-title.html
+				Blackboard Username: zrhines
+				Class Section: CTI.110.0004
+				Purpose: Group Project
+		-->
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>HR Employee Search</title>
+	<link href="group4-hr-style.css" type="text/css" rel="stylesheet" />
+</head>
+<body>
+<div class="container">
+	<header>
+		<h1>HR Employee Search</h1>
+	</header>
+	<aside>
+		<p>Input Job Title to search.</p>
+	</aside>
+<main>
+<!--Calls the employee search function-->
+<form id="jobTitle" action="goup4-hr-emp-search.php" method="post">
+	<section class="search">
+		<h2>Search</h2>
+		<fieldset>
+			<legend>Job Title</legend>
+			<ul>
+				<li>
+					<label for="jobTitle">Job Title:</label>
+					<input type="string" id="jobTitle" name="jobTitle">
+				</li>
+			</ul>
+			<button type="submit" id="jobTitle">Search</button>
+		</fieldset>
+	</section>
+</form>
+</main>
+<br>
+<br>
+	<footer>
+	<!--Returns user to the main HR landing page-->
+	<a href="group4-hr-lp.html">Return to Main Page</a>
+	</footer>
+</div>
+</body>
+</html>
