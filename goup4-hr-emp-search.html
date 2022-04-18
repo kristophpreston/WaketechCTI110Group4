@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+		<!--Name:
+				filename: group4-hr-emp-search.html
+				Blackboard Username: zrhines
+				Class Section: CTI.110.0004
+				Purpose: Group Project
+		-->
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>HR Employee Search</title>
+	<link href="group4-hr-style.css" type="text/css" rel="stylesheet" />
+</head>
+<body>
+<div class="container">
+	<header>
+		<h1>HR Employee Search</h1>
+	</header>
+	<aside>
+		<p>Input Employee ID or Employee Last Name to search.</p>
+	</aside>
+<main>
+<!--Calls the employee search function-->
+<form id="empID" action="goup4-hr-emp-search.php" method="post">
+	<section class="search">
+		<h2>Search</h2>
+		<fieldset>
+			<legend>Employee ID</legend>
+			<ul>
+				<li>
+					<label for="empID">Employee ID:</label>
+					<input type="real" id="empID" name="empID">
+				</li>
+			</ul>
+			<button type="submit" id="empID">Search</button>
+		</fieldset>
+	</section>
+</form>
+<!--Calls the employee search function-->
+<form id="lastName" action="goup4-hr-emp-search.php" method="post">	
+	<section class="search">
+		<fieldset>
+		<legend>Last Name</legend>
+			<ul>
+				<li>
+					<label for="lastName">Last Name:</label>
+					<input type="text" id="lastName" name="lastName">
+				</li>
+			</ul>
+			<button type="submit" id="lastName">Search</button>
+		</fieldset>
+	</section>
+</form>
+</main>
+<br>
+<br>
+	<footer>
+	<!--Returns user to the main HR landing page-->
+	<a href="group4-hr-lp.html">Return to Main Page</a>
+	</footer>
+</div>
+</body>
+</html>
