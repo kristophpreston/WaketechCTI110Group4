@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+		<!--Name:
+				filename: group4-hr-dept-search.html
+				Blackboard Username: nswilson
+				Class Section: CTI.110.0004
+				Purpose: Group Project
+		-->
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>HR Employee Search</title>
+	<link href="group4-hr-style.css" type="text/css" rel="stylesheet" />
+</head>
+<body>
+<div class="container">
+	<header>
+		<h1>HR Department Search</h1>
+	</header>
+	<aside>
+		<p>Input Department Name to search.</p>
+	</aside>
+<main>
+<!--Calls the department search function-->
+<form id="department" action="goup4-hr-dept-search.php" method="post">
+	<section class="search">
+		<h2>Search</h2>
+		<fieldset>
+			<legend>Department Name</legend>
+			<ul>
+				<li>
+					<label for="department">Department Name:</label>
+					<input type="text" id="department" name="department">
+				</li>
+			</ul>
+			<button type="submit">Search</button>
+		</fieldset>
+	</section>
+</form>
+</main>
+<br>
+<br>
+	<footer>
+	<!--Returns user to the main HR landing page-->
+	<a href="group4-hr-lp.html">Return to Main Page</a>
+	</footer>
+</div>
+</body>
+</html>
