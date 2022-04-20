@@ -26,11 +26,26 @@
 	<section class="search">
 		<h2>Search</h2>
 		<fieldset>
-			<legend>Department Name</legend>
+			<legend>Department</legend>
 			<ul>
 				<li>
-					<label for="department">Department Name:</label>
+					<label for="department">Department:</label>
 					<input type="text" id="department" name="department">
+				</li>
+			</ul>
+			<button type="submit">Search</button>
+		</fieldset>
+	</section>
+</form>
+<!--Calls the location search function-->
+<form id="location" action="goup4-hr-loc-search.php" method="post">
+	<section class="search">
+		<fieldset>
+			<legend>Location</legend>
+			<ul>
+				<li>
+					<label for="location">Location:</label>
+					<input type="text" id="location" name="location">
 				</li>
 			</ul>
 			<button type="submit">Search</button>
