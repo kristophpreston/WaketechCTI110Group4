@@ -21,7 +21,7 @@ font-size: default;
 margin-right: 15px;
 }
 ul {
-list-type: none;
+list-style-type: none;
 padding: 5px;
 border: none;
 }
