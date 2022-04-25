@@ -15,39 +15,51 @@
 <body>
 <div class="container">
 	<header>
-		<h1>HR Department Search</h1>
+		<h1>HR Department/Location Search</h1>
 	</header>
 	<aside>
-		<p>Input Department Name to search.</p>
+		<p>Select department name to search.</p>
 	</aside>
 <main>
 <!--Calls the department search function-->
-<form id="department" action="goup4-hr-dept-search.php" method="post">
+<form id="department" action="group4-hr-dept-search.php" method="post">
 	<section class="search">
 		<h2>Search</h2>
 		<fieldset>
 			<legend>Department</legend>
-			<ul>
-				<li>
-					<label for="department">Department:</label>
-					<input type="text" id="department" name="department">
-				</li>
-			</ul>
+            <label for="department">Department:</label>
+            <select id="department" name="department">
+                <option>Administration</option>
+                <option>Marketing</option>
+                <option>Purchasing</option>
+                <option>Human Resources</option>
+                <option>Shipping</option>
+                <option>IT</option>
+                <option>Public Relations</option>
+                <option>Sales</option>
+                <option>Executive</option>
+                <option>Finance</option>
+                <option>Accounting</option>
+            </select>
 			<button type="submit">Search</button>
 		</fieldset>
 	</section>
 </form>
 <!--Calls the location search function-->
-<form id="location" action="goup4-hr-loc-search.php" method="post">
+<form id="location" action="group4-hr-loc-search.php" method="post">
 	<section class="search">
 		<fieldset>
 			<legend>Location</legend>
-			<ul>
-				<li>
-					<label for="location">Location:</label>
-					<input type="text" id="location" name="location">
-				</li>
-			</ul>
+            <label for="location">Location:</label>
+            <select id="location" name="location">
+                <option>Southlake</option>
+                <option>South San Francisco</option>
+                <option>Seattle</option>
+                <option>Toronto</option>
+                <option>London</option>
+                <option>Oxford</option>
+                <option>Munich</option>
+            </select>
 			<button type="submit">Search</button>
 		</fieldset>
 	</section>
