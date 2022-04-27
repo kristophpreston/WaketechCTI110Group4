@@ -26,7 +26,7 @@ if (!$connect) {
         . mysqli_connect_errno() . ", " . mysqli_connect_error() . ")");
 }
 $lastName = $_POST['lastName'];
-$query = "select * from personnel;";
+$query = "select * from employees;";
 
 $result = mysqli_query($connect, $query);
 if (!$result) {
@@ -34,7 +34,7 @@ if (!$result) {
         . mysqli_error($connect) );
 }
 
-$query = "select * from personnel where lastName = '$lastName' order by lastName;";
+$query = "select * from employees where lastName = '$lastName' order by lastName;";
 $result = mysqli_query($connect, $query);
 if (!$result) {
     print("Could not successfully run query. Press back to return."
