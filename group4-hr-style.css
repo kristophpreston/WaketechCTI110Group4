@@ -57,7 +57,7 @@ padding-bottom: 3px;
 }
 table, th, td {
 border: 2px solid #3399ff;
-margin: 3px;
+margin: auto;
 }
 thead {
 background-color: #3399ff;
@@ -99,6 +99,11 @@ padding: 5px;
 footer {
 	margin: auto;
 	width: 80%;
+}
+footer a {
+	display: inline-block;
+	width: 100%;
+	text-align:center;
 }
 Class2 {
 }
