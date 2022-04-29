@@ -9,7 +9,7 @@
 		-->
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>HR Department/Location Search</title>
+	<title>Department Search Results</title>
 	<link href="group4-hr-style.css" type="text/css" rel="stylesheet" />
 </head>
 <body>
@@ -17,9 +17,7 @@
 	<header>
 		<h1>HR Department/Location Search</h1>
 	</header>
-	<aside>
-		<p>Select department name to search.</p>
-	</aside>
+
 <main>
 <!--Calls the department search function-->
 <form id="department" action="group4-hr-dept-search.php" method="post">
@@ -28,7 +26,8 @@
 		<fieldset>
 			<legend>Department</legend>
             <label for="department">Department:</label>
-            <select id="department" name="department">
+            <select id="department" name="department" required>
+				<option disabled selected value>Select Department ...</option>
                 <option>Administration</option>
                 <option>Marketing</option>
                 <option>Purchasing</option>
@@ -51,7 +50,8 @@
 		<fieldset>
 			<legend>Location</legend>
             <label for="location">Location:</label>
-            <select id="location" name="location">
+            <select id="location" name="location" required>
+				<option disabled selected value>Select Location ...</option>
                 <option>Southlake</option>
                 <option>South San Francisco</option>
                 <option>Seattle</option>
