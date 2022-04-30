@@ -29,8 +29,8 @@
             }
 
             $dept = $_POST['department'];
-            $query = "select * from departments join locations " .
-                "on locations.location_id = departments.location_id " .
+            $query = "select * from (departments join locations " .
+                "on locations.location_id = departments.location_id) join countries on locations.country_id = countries.country_id " .
                 "where department_name = '$dept';";
 
             $result = mysqli_query($connect, $query);
@@ -50,12 +50,15 @@
                 $state = $row['state_province'];
                 $postal_code = $row['postal_code'];
                 $location_id = $row['location_id'];
-                echo "<h3>$street_address, <b>$city</b>";
+                echo "<h3>$street_address<br><b>$city</b>";
                 if ($state != null) {
                     echo ", $state";
                 }
                 if ($postal_code != null) {
                     echo " $postal_code";
+                }
+                if ($country = $row['country_name']) {
+                    echo "<br>$country";
                 }
                 echo "</h3>";
 

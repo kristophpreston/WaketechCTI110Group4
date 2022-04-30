@@ -28,7 +28,7 @@ if (!$connect) {
 
 $location = $_POST['location'];
 
-$query = "select * from locations where city = '$location';";
+$query = "select * from (locations join countries on locations.country_id = countries.country_id) join regions on countries.region_id = regions.region_id where city = '$location';";
 
 $result = mysqli_query($connect, $query);
 if (!$result) {
@@ -45,12 +45,15 @@ if (mysqli_num_rows($result) == 0) {
     $state = $row['state_province'];
     $postal_code = $row['postal_code'];
     $location_id = $row['location_id'];
-    echo "<h2>$street_address, <b>$city</b>";
+    echo "<h2>$street_address<br><b>$city</b>";
     if ($state != null) {
         echo ", $state";
     }
     if ($postal_code != null) {
         echo " $postal_code";
+    }
+    if ($country = $row['country_name']) {
+        echo "<br>$country<br>" . $row['region_name'];
     }
     echo "</h2>";
 
