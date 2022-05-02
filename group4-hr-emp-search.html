@@ -22,7 +22,7 @@
 	</aside>
 <main>
 <!--Calls the Employee ID search function-->
-<form id="empID" action="group4-hr-empID-search.php" method="post">
+<form id="empID" action="group4-hr-emp-search.php" method="post">
 	<section class="search">
 		<h2>Search</h2>
 		<fieldset>
@@ -30,7 +30,7 @@
 			<ul>
 				<li>
 					<label for="empID">Employee ID:</label>
-					<input type="real" id="empID" name="empID">
+					<input type="real" id="empID" name="empID" required>
 				</li>
 			</ul>
 			<button type="submit" id="empID">Search</button>
@@ -38,14 +38,14 @@
 	</section>
 </form>
 <!--Calls the Employee Last Name search function-->
-<form id="lastName" action="group4-hr-lastName-search.php" method="post">	
+<form id="lastName" action="group4-hr-emp-search.php" method="post">	
 	<section class="search">
 		<fieldset>
 		<legend>Last Name</legend>
 			<ul>
 				<li>
 					<label for="lastName">Last Name:</label>
-					<input type="text" id="lastName" name="lastName">
+					<input type="text" id="lastName" name="lastName" required>
 				</li>
 			</ul>
 			<button type="submit" id="lastName">Search</button>
