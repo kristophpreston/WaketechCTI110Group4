@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+		<!--Name:
+				filename: group4-hr-fuel.html
+				Blackboard Username: zrhines
+				Class Section: CTI.110.0004
+				Purpose: Group Project
+		-->
+	    <meta charset="utf-8" />
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	    <title>Calculate Fuel Cost</title>
+	    <link href="group4-hr-style.css" type="text/css" rel="stylesheet" />
+    </head>
+    <body>
+        <header>
+			<h1>Calculate Fuel Cost</h1>
+		</header>
+		<main>
+			<form id="travelCost" action="group4-hr-fuel.php" method="post">
+				<table>
+				    <thead>
+					    <tr>
+						    <th colspan="2">
+							    <h2>Trip and Fuel Information</h2>
+						    </th>
+					    </tr>
+			        </thead>
+					<tbody>
+						<tr>
+							<td class="left">Input Average Miles Per Gallon</td>
+							<td><input type="text" name="avgMPG"></td>
+						</tr>
+						<tr>
+							<td class="left">Expected Cost of Gas (per gallon)</td>
+							<td><input type="text" name="exptCost"></td>
+						</tr>
+						<tr>
+							<td class="left">Length of Trip (miles)</td>
+							<td><input type="text" name="tripLength"></td>
+						</tr>
+					</tbody>
+				</table>
+				<button type="submit" id="travelCost">Calculate</button>
+			</form>
+		
+		</main>
+		<br>
+		<br>
+		<footer>
+			<a href="group4-hr-lp.html">Return to Main Page</a>
+		</footer>
+    </body>
