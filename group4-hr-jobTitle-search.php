@@ -48,7 +48,7 @@ if (!$result) {
 }
 
 if (mysqli_num_rows($result) == 0) { 
-   print("No records found with query $jobTitle");
+   print("No records found.");
 } else {
     echo "<table>";
     echo "<tr><th>Employee ID</th><th colspan=2>Name</th><th>Email</th><th>Phone</th><th>Job Code</th><th>Job Title</th><th>Salary</th><th>Hire Date</th><th>Department</th><th>Manager</th></tr>";
