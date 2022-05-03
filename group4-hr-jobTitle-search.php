@@ -96,7 +96,7 @@ mysqli_close($connect);
 ?>
 </main>
 <footer>
-<a href="group4-hr-emp-search.html">Return to Employee Search</a>
+<a href="group4-hr-job-title.html">Return to Employee Search</a>
 </footer>
 </body>
 </html>
