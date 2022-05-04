@@ -21,6 +21,8 @@
         </header>
         <main>
             <?php
+            error_reporting(E_ALL);
+            ini_set("display_errors", 1);
             include('db-connection.php');
             $connect = mysqli_connect($server, $user, $pw, $db);
             if (!$connect) {
@@ -89,6 +91,7 @@
         <footer>
             <a href="group4-hr-dept-search.html">Return to Department/Location Search</a>
         </footer>
+    </div>
 </body>
 
 </html>
