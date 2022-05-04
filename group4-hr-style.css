@@ -105,5 +105,8 @@ footer a {
 	width: 100%;
 	text-align:center;
 }
-Class2 {
-}
+.container .navlist {
+	font-size: small;
+	font-weight: 100;
+	text-decoration:underline;
+	}
