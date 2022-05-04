@@ -43,3 +43,12 @@ if ($avgMPG >= 0) {
     echo "Value cannot be below zero." . PHP_EOL;
 }
 ?>
+</main>
+<footer>
+	<br>
+	<br>
+<a href="group4-hr-fuel.html">Return to Fuel Reimbursement Calculation</a>
+</footer>
+</body>
+</div>
+</html>

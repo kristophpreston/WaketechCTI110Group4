@@ -1,31 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-		<!--Name:
+
+<head>
+	<!--Name:
 				filename: group4-hr-fuel.html
 				Blackboard Username: zrhines
 				Class Section: CTI.110.0004
 				Purpose: Group Project
 		-->
-	    <meta charset="utf-8" />
-	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	    <title>Calculate Fuel Cost</title>
-	    <link href="group4-hr-style.css" type="text/css" rel="stylesheet" />
-    </head>
-    <body>
-        <header>
-			<h1>Calculate Fuel Cost</h1>
-		</header>
-		<main>
-			<form id="travelCost" action="group4-hr-fuel.php" method="post">
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Calculate Fuel Cost</title>
+	<link href="group4-hr-style.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+	<header>
+		<h1>Calculate Fuel Cost</h1>
+	</header>
+	<div class="container">
+		<form id="travelCost" action="group4-hr-fuel.php" method="post">
 				<table>
-				    <thead>
-					    <tr>
-						    <th colspan="2">
-							    <h2>Trip and Fuel Information</h2>
-						    </th>
-					    </tr>
-			        </thead>
+					<thead>
+						<tr>
+							<th colspan="2">
+								<h2>Trip and Fuel Information</h2>
+							</th>
+						</tr>
+					</thead>
 					<tbody>
 						<tr>
 							<td class="left">Input Average Miles Per Gallon</td>
@@ -41,13 +43,16 @@
 						</tr>
 					</tbody>
 				</table>
-				<button type="submit" id="travelCost">Calculate</button>
-			</form>
-		
+				<button type="submit" id="travelCost" style="right: 100px;">Calculate</button>
+		</form>
+
 		</main>
 		<br>
 		<br>
 		<footer>
 			<a href="group4-hr-lp.html">Return to Main Page</a>
 		</footer>
-    </body>
+</body>
+</div>
+
+</html>
