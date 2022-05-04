@@ -24,6 +24,8 @@
 	</header>
 <main>
 <?php
+error_reporting(E_ALL);
+ini_set("display_errors", 1);
 include('db-connection.php');
 $connect = mysqli_connect($server, $user, $pw, $db);
 if (!$connect) { 
@@ -32,12 +34,12 @@ if (!$connect) {
 }
 
 $where = ";";
-$empID = $_POST['empID'];
-if ($empID) {
+if (isset($_POST['empID'])) {
+  $empID = $_POST['empID'];
   $where = " where employee_id = $empID;";
 }
-$lastName = $_POST['lastName'];
-if ($lastName) {
+if (isset($_POST['lastName'])) {
+  $lastName = $_POST['lastName'];
   $where = " where last_name like '%$lastName%';";
 }
 
@@ -76,7 +78,7 @@ if (mysqli_num_rows($result) == 0) {
         $row2 = mysqli_fetch_assoc($result2);
         $department = $row2['department_name'];    
       } else {
-        $department = "error: " . mysqli_error();
+        $department = $department_id;
       }
       
       // lookup manager name
@@ -86,9 +88,9 @@ if (mysqli_num_rows($result) == 0) {
         $row3 = mysqli_fetch_assoc($result3);
         $manager = $row3['last_name'];    
       } else {
-        $manager = "error: " . mysqli_error();
+          $manager = "N/A";
+          $manager_id = "N/A";
       }
-      if (!$manager_id) { $manager = "N/A"; }
       echo "<tr><td>$empID</td><td>$firstName</td><td>$lastName</td><td>$email</td><td>$phone_number</td><td>$jobCode</td><td>$jobTitle</td><td>$" 
            . number_format($salary, 2) . "</td><td>$hire_date</td><td>$department</td><td>$manager</td></tr>";
     }
@@ -102,6 +104,7 @@ mysqli_close($connect);
 <footer>
 <a href="group4-hr-emp-search.html">Return to Employee Search</a>
 </footer>
+</div>
 </body>
 </html>
 
