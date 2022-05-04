@@ -54,22 +54,14 @@ if (mysqli_num_rows($result) == 0) {
     $result2 = mysqli_query($connect, $query2);
     $row2 = mysqli_fetch_assoc($result2);
     $averageSalary = $row2['avg(salary)'];
-    $count = $row2['count(*)'];
+    $count = $row2['count(*)'] + 1;
     echo "<tr><th rowspan='$count' scope='row'>$jobTitle</th>";
 
     $query3 = "select * from employees where job_id = $jobId;";
     $result3 = mysqli_query($connect, $query3);
-    $row3 = mysqli_fetch_assoc($result3);
-    $firstName = $row3['first_name'];
-    $lastName = $row3['last_name'];
-    $salary = $row3['salary'];
-    echo "<td>$firstName</td><td>$lastName</td><td class='right'>$" . number_format($salary, 2) . "</td>";
+    echo "<th colspan='2'>Name</th><th>Salary</th>";
 
     echo "<td rowspan='$count' class='center'>Average Salary<br><b>$" . number_format($averageSalary, 2) . "</b></td></tr>";
-    //echo "<tr><th rowspan='$count' colspan='2'>$jobTitle</th><td>Average Salary: <b>$" . number_format($averageSalary, 2) . "</b></td></tr>";
-    // list the employees
-    //$query3 = "select * from employees where job_id = $jobId;";
-    //$result3 = mysqli_query($connect, $query3);
     while ($row3 = mysqli_fetch_assoc($result3)) {
       $firstName = $row3['first_name'];
       $lastName = $row3['last_name'];
