@@ -47,7 +47,7 @@ if (mysqli_num_rows($result) == 0) {
     $state = $row['state_province'];
     $postal_code = $row['postal_code'];
     $location_id = $row['location_id'];
-    echo "<h2>$street_address<br><b>$city</b>";
+    echo "<h2><span style='vertical-align:top'>$location: </span><span style='display:inline-block;'>$street_address<br><b>$city</b>";
     if ($state != null) {
         echo ", $state";
     }
@@ -57,7 +57,7 @@ if (mysqli_num_rows($result) == 0) {
     if ($country = $row['country_name']) {
         echo "<br>$country<br>" . $row['region_name'];
     }
-    echo "</h2>";
+    echo "</span></h2>";
 
     $query = "select * from departments where location_id = '$location_id';";
     $result = mysqli_query($connect, $query);
@@ -70,18 +70,28 @@ if (mysqli_num_rows($result) == 0) {
     } else {
         echo "<table>";
         echo "<caption>Employees in $city by Department</caption>";
+        echo "<tr><th>Department</th><th colspan='2'>Name</th><th>Email</th><th>Phone</th></tr>";
         while ($row = mysqli_fetch_assoc($result)) {
             $dept = $row['department_name'];
             $dept_id = $row['department_id'];
-            echo "<tr><th colspan=4>$dept</th></tr>";
             $query = "select * from employees where department_id = '$dept_id' order by last_name;";
             $result2 = mysqli_query($connect, $query);
-            while ($row2 = mysqli_fetch_assoc($result2)) {
+            $count2 = mysqli_num_rows($result2);
+            if ($count2 > 0) {
+                echo "<tr><th rowspan='$count2' scope='row'>$dept</th>";
+                $row2 = mysqli_fetch_assoc($result2);
                 $first = $row2['first_name'];
                 $last = $row2['last_name'];
                 $email = $row2['email'];
                 $phone = $row2['phone_number'];
-                echo "<tr><td>$first</td><td>$last</td><td>$email</td><td>$phone</td></tr>";
+                echo "<td>$first</td><td>$last</td><td>$email</td><td>$phone</td></tr>";
+                while ($row2 = mysqli_fetch_assoc($result2)) {
+                    $first = $row2['first_name'];
+                    $last = $row2['last_name'];
+                    $email = $row2['email'];
+                    $phone = $row2['phone_number'];
+                    echo "<tr><td>$first</td><td>$last</td><td>$email</td><td>$phone</td></tr>";
+                }
             }
         }
         echo "</table>";
