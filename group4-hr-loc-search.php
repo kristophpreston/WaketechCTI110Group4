@@ -14,10 +14,6 @@
 </head>
 <body>
 <div class="container">
-	<header>
-		<h1>HR Location Search Results</h1>
-	</header>
-<main>
 <?php
 error_reporting(E_ALL);
 ini_set("display_errors", 1);
@@ -29,6 +25,10 @@ if (!$connect) {
 }
 
 $location = $_POST['location'];
+echo "<header>
+<h1>HR Location Search Results for <i>$location</i></h1>
+</header>
+<main>";
 
 $query = "select * from (locations join countries on locations.country_id = countries.country_id) join regions on countries.region_id = regions.region_id where city = '$location';";
 
@@ -47,7 +47,7 @@ if (mysqli_num_rows($result) == 0) {
     $state = $row['state_province'];
     $postal_code = $row['postal_code'];
     $location_id = $row['location_id'];
-    echo "<h2><span style='vertical-align:top'>$location: </span><span style='display:inline-block;'>$street_address<br><b>$city</b>";
+    echo "<h4>$street_address<br><b>$city</b>";
     if ($state != null) {
         echo ", $state";
     }
@@ -57,7 +57,7 @@ if (mysqli_num_rows($result) == 0) {
     if ($country = $row['country_name']) {
         echo "<br>$country<br>" . $row['region_name'];
     }
-    echo "</span></h2>";
+    echo "</h4>";
 
     $query = "select * from departments where location_id = '$location_id';";
     $result = mysqli_query($connect, $query);
@@ -70,11 +70,11 @@ if (mysqli_num_rows($result) == 0) {
     } else {
         echo "<table>";
         echo "<caption>Employees in $city by Department</caption>";
-        echo "<tr><th>Department</th><th colspan='2'>Name</th><th>Email</th><th>Phone</th></tr>";
+        echo "<tr><th>Department</th><th colspan='2'>Name</th><th>Email</th><th>Phone</th><th>Job</th></tr>";
         while ($row = mysqli_fetch_assoc($result)) {
             $dept = $row['department_name'];
             $dept_id = $row['department_id'];
-            $query = "select * from employees where department_id = '$dept_id' order by last_name;";
+            $query = "select * from employees join jobs on employees.job_id = jobs.job_id where department_id = '$dept_id' order by last_name;";
             $result2 = mysqli_query($connect, $query);
             $count2 = mysqli_num_rows($result2);
             if ($count2 > 0) {
@@ -84,13 +84,14 @@ if (mysqli_num_rows($result) == 0) {
                 $last = $row2['last_name'];
                 $email = $row2['email'];
                 $phone = $row2['phone_number'];
-                echo "<td>$first</td><td>$last</td><td>$email</td><td>$phone</td></tr>";
+                $job = $row2['job_title'];
+                echo "<td>$first</td><td>$last</td><td>$email</td><td>$phone</td><td>$job</td></tr>";
                 while ($row2 = mysqli_fetch_assoc($result2)) {
                     $first = $row2['first_name'];
                     $last = $row2['last_name'];
                     $email = $row2['email'];
                     $phone = $row2['phone_number'];
-                    echo "<tr><td>$first</td><td>$last</td><td>$email</td><td>$phone</td></tr>";
+                    echo "<tr><td>$first</td><td>$last</td><td>$email</td><td>$phone</td><td>$job</td></tr>";
                 }
             }
         }
