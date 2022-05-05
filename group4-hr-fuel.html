@@ -13,55 +13,52 @@
 	<title>Calculate Fuel Cost</title>
 	<link href="group4-hr-style.css" type="text/css" rel="stylesheet" />
 </head>
-<div class="container">
-<style>
-	button {
-		margin:auto;
-		text-align: center;
-	}
-</style>
-	<body>
+
+<body>
+	<div class="container">
+
 		<header>
 			<h1>Calculate Fuel Cost</h1>
 		</header>
 		<br>
-
-		<form id="travelCost" action="group4-hr-fuel.php" method="post">
-			<table>
-				<thead>
-					<tr>
-						<th colspan="2">
-							<h2>Trip and Fuel Information</h2>
-						</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td class="left">Input Average Miles Per Gallon</td>
-						<td><input type="text" name="avgMPG" required></td>
-					</tr>
-					<tr>
-						<td class="left">Expected Cost of Gas (per gallon)</td>
-						<td><input type="text" name="exptCost" required></td>
-					</tr>
-					<tr>
-						<td class="left">Length of Trip (miles)</td>
-						<td><input type="text" name="tripLength" required></td>
-					</tr>
-				</tbody>
-				<tfoot><tr><td style="border-width: 0;">
-					<button type="submit" id="travelCost">Calculate</button>
-				</td></tr></tfoot>
-			</table>
-		</form>
+		<main>
+			<form id="travelCost" action="group4-hr-fuel.php" method="post">
+				<table>
+					<thead>
+						<th colspan="2" style="font-size:larger">Trip and Fuel Information</th>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="left">Input Average Miles Per Gallon</td>
+							<td><input type="text" name="avgMPG" required></td>
+						</tr>
+						<tr>
+							<td class="left">Expected Cost of Gas (per gallon)</td>
+							<td><input type="text" name="exptCost" required></td>
+						</tr>
+						<tr>
+							<td class="left">Length of Trip (miles)</td>
+							<td><input type="text" name="tripLength" required></td>
+						</tr>
+					</tbody>
+					<tfoot>
+						<tr>
+							<td style="border-width: 0;">
+								<button type="submit" id="travelcostCalc">Calculate</button>
+							</td>
+						</tr>
+					</tfoot>
+				</table>
+			</form>
 
 		</main>
-		<br>
-		<br>
+
 		<footer>
+			<br>
+			<br>
 			<a href="group4-hr-lp.html">Return to Main Page</a>
 		</footer>
-	</body>
-</div>
+	</div>
+</body>
 
 </html>
