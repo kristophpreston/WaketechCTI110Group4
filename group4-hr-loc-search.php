@@ -83,14 +83,23 @@ if (mysqli_num_rows($result) == 0) {
                 $first = $row2['first_name'];
                 $last = $row2['last_name'];
                 $email = $row2['email'];
-                $phone = $row2['phone_number'];
+                if (isset($row['phone_number'])) {
+                    $phone = $row['phone_number'];
+                } else {
+                    $phone = "Unlisted";
+                }
                 $job = $row2['job_title'];
                 echo "<td>$first</td><td>$last</td><td>$email</td><td>$phone</td><td>$job</td></tr>";
                 while ($row2 = mysqli_fetch_assoc($result2)) {
                     $first = $row2['first_name'];
                     $last = $row2['last_name'];
                     $email = $row2['email'];
-                    $phone = $row2['phone_number'];
+                    if (isset($row['phone_number'])) {
+                        $phone = $row['phone_number'];
+                    } else {
+                        $phone = "Unlisted";
+                    }
+                    $job = $row2['job_title'];
                     echo "<tr><td>$first</td><td>$last</td><td>$email</td><td>$phone</td><td>$job</td></tr>";
                 }
             }
