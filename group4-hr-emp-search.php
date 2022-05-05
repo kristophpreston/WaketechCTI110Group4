@@ -57,7 +57,7 @@ if (mysqli_num_rows($result) == 0) {
    print("No records found with query $empID");
 } else {
     echo "<table>";
-    echo "<tr><th>Employee ID</th><th colspan=2>Name</th><th>Email</th><th>Phone</th><th>Job Code</th><th>Job Title</th><th>Salary</th><th>Hire Date</th><th>Department</th><th>Manager</th></tr>";
+    echo "<tr><th>Employee ID</th><th colspan=2>Name</th><th>Email</th><th>Phone</th><th>Job Code</th><th>Job Title</th><th>Salary</th><th>Hire Date</th><th>Department</th><th>Dept ID</th><th>Manager</th><th>Manager ID</th></tr>";
     while ($row = mysqli_fetch_assoc($result)) {
       $empID = $row['employee_id'];
 		  $firstName = $row['first_name'];
@@ -92,7 +92,7 @@ if (mysqli_num_rows($result) == 0) {
           $manager_id = "N/A";
       }
       echo "<tr><td>$empID</td><td>$firstName</td><td>$lastName</td><td>$email</td><td>$phone_number</td><td>$jobCode</td><td>$jobTitle</td><td>$" 
-           . number_format($salary, 2) . "</td><td>$hire_date</td><td>$department</td><td>$manager</td></tr>";
+           . number_format($salary, 2) . "</td><td>$hire_date</td><td>$department</td><td>$department_id</td><td>$manager</td><td>$manager_id</td></tr>";
     }
     echo "</table>";
 }
@@ -102,6 +102,8 @@ mysqli_close($connect);
 ?>
 </main>
 <footer>
+  <br>
+  <br>
 <a href="group4-hr-emp-search.html">Return to Employee Search</a>
 </footer>
 </div>
