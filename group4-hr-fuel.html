@@ -38,19 +38,21 @@
 				<tbody>
 					<tr>
 						<td class="left">Input Average Miles Per Gallon</td>
-						<td><input type="text" name="avgMPG"></td>
+						<td><input type="text" name="avgMPG" required></td>
 					</tr>
 					<tr>
 						<td class="left">Expected Cost of Gas (per gallon)</td>
-						<td><input type="text" name="exptCost"></td>
+						<td><input type="text" name="exptCost" required></td>
 					</tr>
 					<tr>
 						<td class="left">Length of Trip (miles)</td>
-						<td><input type="text" name="tripLength"></td>
+						<td><input type="text" name="tripLength" required></td>
 					</tr>
 				</tbody>
+				<tfoot><tr><td style="border-width: 0;">
+					<button type="submit" id="travelCost">Calculate</button>
+				</td></tr></tfoot>
 			</table>
-			<button type="submit" id="travelCost" style="left: 100px;">Calculate</button>
 		</form>
 
 		</main>

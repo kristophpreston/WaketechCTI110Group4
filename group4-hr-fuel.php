@@ -22,9 +22,9 @@
 	</style>
 
 </head>
-<div class="container">
 
-	<body>
+<body>
+	<div class="container">
 		<header>
 			<h1>Total Fuel Cost</h1>
 		</header>
@@ -44,8 +44,7 @@
 				if ($exptCost >= 0) {
 					if ($tripLength >= 0) {
 						$travelCost = $tripLength / $avgMPG * $exptCost;
-						$travelCost = round($travelCost, 2);
-						print ("<p>Your total travel cost is: $$travelCost.</p>") . PHP_EOL;
+						print ("<p>Your total travel cost is: $".number_format($travelCost,2)."</p>") . PHP_EOL;
 					} else {
 						echo "Value cannot be below zero." . PHP_EOL;
 					}
@@ -62,7 +61,7 @@
 			<br>
 			<a href="group4-hr-fuel.html">Return to Fuel Reimbursement Calculation</a>
 		</footer>
-	</body>
-</div>
+	</div>
+</body>
 
 </html>
