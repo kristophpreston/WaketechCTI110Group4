@@ -83,8 +83,8 @@ if (mysqli_num_rows($result) == 0) {
                 $first = $row2['first_name'];
                 $last = $row2['last_name'];
                 $email = $row2['email'];
-                if (isset($row['phone_number'])) {
-                    $phone = $row['phone_number'];
+                if (isset($row2['phone_number'])) {
+                    $phone = $row2['phone_number'];
                 } else {
                     $phone = "Unlisted";
                 }
@@ -94,8 +94,8 @@ if (mysqli_num_rows($result) == 0) {
                     $first = $row2['first_name'];
                     $last = $row2['last_name'];
                     $email = $row2['email'];
-                    if (isset($row['phone_number'])) {
-                        $phone = $row['phone_number'];
+                    if (isset($row2['phone_number'])) {
+                        $phone = $row2['phone_number'];
                     } else {
                         $phone = "Unlisted";
                     }
